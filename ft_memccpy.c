@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 14:23:16 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/16 16:52:35 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:00:41 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
+	size_t				i;
 
 	d = (unsigned char*)dest;
 	s = (const unsigned char*)src;
-	while (n--)
+	i = 0;
+	while (i < n)
 	{
-		*d++ = *s++;
-		if (*(s - 1) == c)
-			return (d);
+		d[i] = s[i];
+		if (s[i] == (unsigned char)c)
+			return ((void*)(d + i + 1));
+		i++;
 	}
 	return (0);
 }
