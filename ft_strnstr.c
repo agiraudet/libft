@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:40:40 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/19 17:11:33 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:28:48 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static int	ft_check_occurence(const char *hay, const char *needle, size_t len)
 
 char		*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	i;
+
 	if (!(*little))
 		return ((char*)big);
 	if (!(*big) || !len)
@@ -31,8 +33,13 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 	while (*big && len--)
 	{
 		if (*big == *little)
-			if (ft_check_occurence(big, little, len))
+		{
+			i = 0;
+			while (little [i] && big[i] == little[i] && i < len)
+				i++;
+			if (little[i] == '\0')
 				return ((char*)big);
+		}
 		big++;
 	}
 	return (0);
