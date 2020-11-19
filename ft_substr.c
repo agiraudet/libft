@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 11:47:02 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/19 17:35:21 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:36:48 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (len >= ft_strlen(s))
-		return (ft_strdup("");
+		return (ft_strdup(""));
 	ret = (char*)malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (0);
