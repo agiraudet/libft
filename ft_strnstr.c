@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:40:40 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/19 17:34:24 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:43:28 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (!(*little))
 		return ((char*)big);
-	if (!(*big) || !len)
-		return (0);
 	while (*big && len--)
 	{
 		if (*big == *little)
 		{
 			i = 0;
-			while (little [i] && big[i] == little[i] && i < len)
+			while (little[i] && big[i] == little[i] && i < len)
 				i++;
 			if (little[i] == '\0')
 				return ((char*)big);
