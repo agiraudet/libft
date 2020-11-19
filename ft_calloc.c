@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 10:42:36 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/16 16:58:51 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:13:45 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*ptr;
 	size_t			i;
 
-	if (!nmemb)
+	if (!nmemb || !size)
 		return (0);
-	if (!size)
-		size = 1;
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (0);
