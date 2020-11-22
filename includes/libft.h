@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/21 17:11:24 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/22 02:03:11 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
 char				*ft_revstr(char *str);
+void				ft_putstr(const char *str);
+void				ft_putendl(const char *str);
+void				ft_putchar(const char c);
 
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -70,5 +73,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 								void (*del)(void *));
+t_list				*ft_lstpop_front(t_list **lst);
+t_list				*ft_lstpop_back(t_list **lst);
 
 #endif
