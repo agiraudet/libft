@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpop_srch.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/22 21:42:59 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/23 15:21:49 by agiraude         ###   ########.fr       */
+/*   Created: 2020/11/23 15:24:44 by agiraude          #+#    #+#             */
+/*   Updated: 2020/11/23 18:47:19 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-t_list	*ft_lstpop_srch(t_list **lst, int (*f)(void *, void *), void *data)
+void	ft_putnbr(int n)
 {
-	t_list	*pop;
-	t_list	*prev;
-
-	if (!*lst)
-		return (0);
-	pop = *lst;
-	prev = 0;
-	while (!f(pop->content, data))
-	{
-		if (!pop->next)
-			break ;
-		prev = pop;
-		pop = pop->next;
-	}
-	if (prev)
-		prev->next = pop->next;
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
 	else
-		*lst = pop->next;
-	return (pop);
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n *= -1;
+		}
+		if (n > 9)
+			ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
 }

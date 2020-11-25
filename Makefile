@@ -6,11 +6,15 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/12 15:46:26 by agiraude          #+#    #+#              #
-#    Updated: 2020/11/22 21:49:48 by agiraude         ###   ########.fr        #
+#    Updated: 2020/11/25 20:41:57 by agiraude         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	srcs/ft_atoi.c srcs/ft_bzero.c srcs/ft_calloc.c srcs/ft_isalnum.c srcs/ft_isalpha.c srcs/ft_isascii.c srcs/ft_isdigit.c srcs/ft_isprint.c srcs/ft_itoa.c srcs/ft_memccpy.c srcs/ft_memchr.c srcs/ft_memcmp.c srcs/ft_memcpy.c srcs/ft_memmove.c srcs/ft_memset.c srcs/ft_putchar_fd.c srcs/ft_putendl_fd.c srcs/ft_putnbr_fd.c srcs/ft_putstr_fd.c srcs/ft_split.c srcs/ft_strchr.c srcs/ft_strdup.c srcs/ft_strjoin.c srcs/ft_strlcat.c srcs/ft_strlcpy.c srcs/ft_strlen.c srcs/ft_strmapi.c srcs/ft_strncmp.c srcs/ft_strnstr.c srcs/ft_strrchr.c srcs/ft_strtrim.c srcs/ft_substr.c srcs/ft_tolower.c srcs/ft_toupper.c srcs/ft_revstr.c srcs/ft_putstr.c srcs/ft_lstpop_front.c srcs/ft_lstadd_back.c srcs/ft_lstadd_front.c srcs/ft_lstclear.c srcs/ft_lstdelone.c srcs/ft_lstiter.c srcs/ft_lstiter.c srcs/ft_lstlast.c srcs/ft_lstmap.c srcs/ft_lstnew.c srcs/ft_lstsize.c srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_putendl.c srcs/ft_lstpop_back.c srcs/ft_lstpop_srch.c
+SRCS_FOLDER	=	srcs/
+
+SRCS_FILES	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_revstr.c ft_putstr.c ft_lstpop_front.c ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c ft_putchar.c ft_putstr.c ft_putendl.c ft_lstpop_back.c ft_lstpop_srch.c ft_putnbr.c ft_putstr.c ft_putchar.c
+
+SRCS		=	$(addprefix $(SRCS_FOLDER), $(SRCS_FILES))
 
 OBJS		= 	$(SRCS:.c=.o)
 
