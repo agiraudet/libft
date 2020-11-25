@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/25 21:19:16 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:32:56 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_putchar_fd(char c, int fd);
-void				ft_putchar(const unsigned int c);
+void				ft_putchar(const int c);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putstr(const char *str);
 void				ft_putendl_fd(char *s, int fd);
