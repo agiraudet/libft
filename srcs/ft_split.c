@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:15:00 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/25 21:12:29 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:13:52 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char		*ft_cutstr(char const *s, size_t len)
 	return (ret);
 }
 
-static int		ft_free_tab(char ***tab, size_t i)
+static char		**ft_free_tab(char ***tab, size_t i)
 {
 	while (i - 1 > 0)
 		free(*tab[i]);
