@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:15:00 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/25 21:13:52 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:29:56 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ char			**ft_split(char const *s, char c)
 	size_t	len;
 	size_t	i;
 
-	ret = (char**)malloc(sizeof(char*) * (ft_countstrs(s, c) + 1));
-	if (!ret)
+	if (!s)
+		return (0);
+	if (!(ret = (char**)malloc(sizeof(char*) * (ft_countstrs(s, c) + 1))))
 		return (0);
 	i = 0;
 	while (*s)

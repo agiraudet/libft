@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 01:47:13 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/22 02:03:05 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:24:16 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstpop_back(t_list **lst)
 {
 	t_list	*pop;
-	t_list *prev;
+	t_list	*prev;
 
 	if (!*lst)
 		return (0);
@@ -31,4 +31,4 @@ t_list	*ft_lstpop_back(t_list **lst)
 	else
 		*lst = 0;
 	return (pop);
-}	
+}
