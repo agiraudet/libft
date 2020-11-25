@@ -6,13 +6,13 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 01:20:18 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/22 01:21:20 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:09:05 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_putchar(const char c)
+void	ft_putchar(const unsigned char c)
 {
 	write(1, &c, 1);
 }

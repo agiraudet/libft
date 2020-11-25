@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 01:21:28 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/22 01:22:35 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:09:50 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putstr(const char *str)
 {
-	write(1, str, ft_strlen(str));
+	if (str)
+		write(1, str, ft_strlen(str));
 }

@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 11:59:15 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/16 17:00:24 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 20:58:48 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!ret)
 		return (0);
 	i = 0;
-	while (*s1)
+	while (s1 && *s1)
 		ret[i++] = *s1++;
-	while (*s2)
+	while (s2 && *s2)
 		ret[i++] = *s2++;
 	ret[i] = '\0';
 	return (ret);

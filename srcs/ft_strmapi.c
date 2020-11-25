@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:57:30 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/17 19:54:56 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 21:06:44 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*ret;
 	unsigned int	i;
 
+	if (!s || !f)
+		return (0);
 	ret = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!ret)
 		return (0);

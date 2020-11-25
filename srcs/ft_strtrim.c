@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:52:08 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/19 16:01:43 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/11/25 20:58:29 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t	size;
 	size_t	i;
 
+	if (!s1 || !set)
+		return (0);
 	size = ft_countchar(s1, set);
 	ret = (char*)malloc(sizeof(char) * (size + 1));
 	if (!ret)
