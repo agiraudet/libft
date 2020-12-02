@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/25 21:32:56 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/12/02 12:42:49 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(long nb, char *base);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putchar(const int c);
@@ -78,5 +79,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 t_list				*ft_lstpop_front(t_list **lst);
 t_list				*ft_lstpop_back(t_list **lst);
 t_list				*ft_lstpop_srch(t_list **lst, int (*f)(void *, void *), void *data);
+void				ft_lstswap(t_list *prev, t_list *a);
 
 #endif
