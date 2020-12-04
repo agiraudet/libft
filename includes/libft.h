@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2020/12/02 12:42:49 by agiraude         ###   ########.fr       */
+/*   Updated: 2020/12/03 15:50:52 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(long nb, char *base);
+char				*ft_utoa(unsigned int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_ctostr(const char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putchar(const int c);
 void				ft_putstr_fd(char *s, int fd);
