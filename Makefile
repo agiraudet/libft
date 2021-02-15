@@ -6,7 +6,7 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/12 15:46:26 by agiraude          #+#    #+#              #
-#    Updated: 2021/02/15 01:12:18 by agiraude         ###   ########.fr        #
+#    Updated: 2021/02/15 13:58:14 by agiraude         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,9 @@ SRCS_FILES	=	ft_atoi.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 				ft_putstr_fd.c \
+				ft_getindex.c \
 				ft_split.c \
+				ft_nsplit.c \
 				ft_strchr.c \
 				ft_strdup.c \
 				ft_strjoin.c \
@@ -75,6 +77,8 @@ SRCS_FILES	=	ft_atoi.c \
 
 SRCS		=	$(addprefix $(SRCS_FOLDER), $(SRCS_FILES))
 
+INC			=	-I includes/
+
 OBJS		= 	$(SRCS:.c=.o)
 
 CC			=	gcc
@@ -86,7 +90,7 @@ RM			=	rm -f
 NAME		=	libft.a
 
 .c.o:
-				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+				$(CC) $(CFLAGS) $(INC) -c $< -o $(<:.c=.o)
 
 all:			$(NAME)
 

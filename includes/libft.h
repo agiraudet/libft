@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 01:13:33 by agiraude         ###   ########.fr       */
+/*   Updated: 2021/02/15 03:36:07 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+int					ft_getindex(const char *s, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -56,6 +57,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
+char				**ft_nsplit(char const *str, char const *sep);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(long nb, char *base);
 char				*ft_utoa(unsigned int n);
