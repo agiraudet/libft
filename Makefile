@@ -6,7 +6,7 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/12 15:46:26 by agiraude          #+#    #+#              #
-#    Updated: 2021/02/12 19:23:18 by agiraude         ###   ########.fr        #
+#    Updated: 2021/02/15 01:12:18 by agiraude         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS_FILES	=	ft_atoi.c \
 				ft_strlcpy.c \
 				ft_strlen.c \
 				ft_strmapi.c \
+				ft_strcmp.c \
 				ft_strncmp.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
