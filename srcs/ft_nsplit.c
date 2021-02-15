@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 03:07:40 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 14:21:48 by agiraude         ###   ########.fr       */
+/*   Updated: 2021/02/15 14:35:59 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	count_str(const char *str, const char *sep)
 
 static char	**destroy_ret(char **ret, int i)
 {
+	i--;
 	while (i >= 0)
 		free(ret[i--]);
 	free(ret);
@@ -53,17 +54,16 @@ char		**ft_nsplit(const char *str, const char *sep)
 	i = 0;
 	while (*str)
 	{
-		while(*str && ft_getindex(sep, *str) != -1)
+		while (*str && ft_getindex(sep, *str) != -1)
 			str++;
 		if (*str && ft_getindex(sep, *str) == -1)
 		{
 			len = 0;
 			while (str[len] && ft_getindex(sep, str[len]) == -1)
 				len++;
-			if (!(ret[i] = ft_substr(str, 0, len)))
+			if (!(ret[i++] = ft_substr(str, 0, len)))
 				return (destroy_ret(ret, i));
 			str += len;
-			i++;
 		}
 	}
 	ret[i] = 0;
