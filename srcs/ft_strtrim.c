@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:52:08 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/25 20:58:29 by agiraude         ###   ########.fr       */
+/*   Updated: 2021/02/16 16:01:13 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		ft_inset(const char c, const char *set)
 	return (0);
 }
 
-static size_t	ft_countchar(const char *s1, const char *set)
+static size_t	ft_countch(const char *s1, const char *set)
 {
 	size_t	count;
 
@@ -51,7 +51,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (0);
-	size = ft_countchar(s1, set);
+	size = ft_countch(s1, set);
 	ret = (char*)malloc(sizeof(char) * (size + 1));
 	if (!ret)
 		return (0);

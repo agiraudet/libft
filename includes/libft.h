@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 16:29:24 by agiraude         ###   ########.fr       */
+/*   Updated: 2021/02/16 16:00:02 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_getindex(const char *s, char c);
+int					ft_countchar(const char *s, char c);
 char				*ft_ltrim(const char *s);
 char				*ft_rtrim(const char *s);
 char				*ft_trim(const char *s);
