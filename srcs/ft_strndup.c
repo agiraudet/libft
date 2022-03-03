@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/03/02 23:22:21 by agiraude          #+#    #+#             */
+/*   Updated: 2022/03/02 23:22:28 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strndup(const char *src, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	char	*dst;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
+	if (!src || n <= 0)
 		return (0);
-	while (--n)
-	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
-	}
-	return (*str1 - *str2);
+	if (ft_strlen(src) <= n)
+		return (ft_strdup(src));
+	dst = (char *)malloc(sizeof(char) * (n + 1));
+	if (!dst)
+		return (0);
+	ft_strlcpy(dst, src, n + 1);
+	return (dst);
 }

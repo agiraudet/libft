@@ -6,13 +6,13 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 03:12:21 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 14:09:49 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/02 23:26:56 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_getindex(const char *s, char c)
+int	ft_getindex(const char *s, char c)
 {
 	int		i;
 

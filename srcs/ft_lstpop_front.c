@@ -6,16 +6,18 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 00:52:30 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/22 01:12:15 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:52:19 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstpop_front(t_list **lst)
 {
 	t_list	*pop;
 
+	if (!lst || !*lst)
+		return (0);
 	pop = *lst;
 	*lst = (*lst)->next;
 	return (pop);

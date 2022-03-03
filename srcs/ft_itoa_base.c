@@ -6,18 +6,18 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 12:22:42 by agiraude          #+#    #+#             */
-/*   Updated: 2020/12/10 17:18:06 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/02 23:57:35 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-static int	check_error(char *base, long baselen)
+static int	check_base(char *base)
 {
 	size_t	i;
 	size_t	ii;
 
-	if (baselen <= 1)
+	if (!base)
 		return (0);
 	i = 0;
 	while (base[i])
@@ -25,40 +25,42 @@ static int	check_error(char *base, long baselen)
 		ii = 0;
 		while (base[ii])
 		{
-			if (base[i] == base[ii] && i != ii)
+			if (base[ii] == base[i] && i != ii)
 				return (0);
 			ii++;
 		}
 		i++;
 	}
+	if (i <= 1)
+		return (0);
 	return (1);
 }
 
-char		*ft_itoa_base(long nb, char *base)
+char	*ft_itoa_base(long nb, char *base)
 {
-	char	tmp[100];
-	char	*ret;
-	int		sign;
+	int		i;
+	int		minus;
 	long	baselen;
-	size_t	i;
+	char	buf[25];
 
-	baselen = ft_strlen(base);
-	if (check_error(base, baselen) == 0)
+	if (check_base(base) == 0)
 		return (0);
-	sign = (nb < 0) ? -1 : 1;
-	nb = (sign == -1) ? -nb : nb;
+	minus = 0;
+	if (nb < 0)
+	{
+		minus = 1;
+		nb *= -1;
+	}
+	baselen = ft_strlen(base);
 	i = 0;
 	while (nb >= baselen)
 	{
-		tmp[i++] = base[nb % baselen];
+		buf[i++] = base[nb % baselen];
 		nb /= baselen;
 	}
-	tmp[i++] = base[nb % baselen];
-	if (sign == -1)
-		tmp[i++] = '-';
-	tmp[i] = '\0';
-	ret = ft_strdup(tmp);
-	if (!ret)
-		return (0);
-	return (ft_revstr(ret));
+	buf[i++] = base[nb % baselen];
+	if (minus)
+		buf[i++] = '-';
+	buf[i] = 0;
+	return (ft_strdup(ft_revstr(buf)));
 }

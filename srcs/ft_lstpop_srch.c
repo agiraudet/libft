@@ -6,11 +6,11 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 21:42:59 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/23 15:21:49 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:02:03 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstpop_srch(t_list **lst, int (*f)(void *, void *), void *data)
 {
@@ -24,7 +24,7 @@ t_list	*ft_lstpop_srch(t_list **lst, int (*f)(void *, void *), void *data)
 	while (!f(pop->content, data))
 	{
 		if (!pop->next)
-			break ;
+			return (0);
 		prev = pop;
 		pop = pop->next;
 	}

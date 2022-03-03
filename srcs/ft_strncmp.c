@@ -6,15 +6,15 @@
 /*   By: agiraude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:32:11 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 01:13:54 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:08:44 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!n)

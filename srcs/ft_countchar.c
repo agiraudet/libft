@@ -6,13 +6,13 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 15:57:54 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/16 15:59:39 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/02 23:26:09 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countchar(const char *s, char c)
+int	ft_countchar(const char *s, char c)
 {
 	int		count;
 

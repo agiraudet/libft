@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_arrsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/03/02 23:14:38 by agiraude          #+#    #+#             */
+/*   Updated: 2022/03/02 23:14:45 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_arrsort(void **tab, int (*cmp)(void *, void *))
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	int		i;
+	char	*tmp;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
-		return (0);
-	while (--n)
+	if (!tab || !tab[0] || !tab[1])
+		return ;
+	i = 1;
+	while (tab[i])
 	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
+		if ((*cmp)(tab[i - 1], tab[i]) > 0)
+		{
+			tmp = tab[i - 1];
+			tab[i - 1] = tab[i];
+			tab[i] = tmp;
+			i = 0;
+		}
+		i++;
 	}
-	return (*str1 - *str2);
 }

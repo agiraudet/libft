@@ -6,16 +6,16 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:14:38 by agiraude          #+#    #+#             */
-/*   Updated: 2020/11/16 16:57:40 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:07:23 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-size_t			ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t dstlen;
+	size_t	i;
+	size_t	dstlen;
 
 	dstlen = ft_strlen(dst);
 	i = 0;

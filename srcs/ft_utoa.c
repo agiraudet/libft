@@ -6,11 +6,11 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:40:29 by agiraude          #+#    #+#             */
-/*   Updated: 2020/12/10 17:18:38 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:15:38 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static size_t	ft_ulen(unsigned int nb)
 {
@@ -27,12 +27,12 @@ static size_t	ft_ulen(unsigned int nb)
 	return (len);
 }
 
-char			*ft_utoa(unsigned int n)
+char	*ft_utoa(unsigned int n)
 {
 	char	*str;
 	size_t	i;
 
-	str = (char*)malloc(sizeof(char) * (ft_ulen(n) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_ulen(n) + 1));
 	if (!str)
 		return (0);
 	i = 0;

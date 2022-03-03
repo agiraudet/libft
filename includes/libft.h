@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:15:32 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/16 16:00:02 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 01:46:02 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,13 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strnstr(const char *big, const char *little,
 								size_t len);
+char				*ft_strstr(const char *haystack, const char *needle);
 int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
+char				*ft_strndup(const char *s, size_t n);
 char				*ft_revstr(char *str);
+char				*ft_strrplc(char *src, char *find, char *replace);
 void				ft_putstr(const char *str);
 void				ft_putendl(const char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -78,6 +81,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbr(int n);
 
 t_list				*ft_lstnew(void *content);
+size_t				ft_lstlen(t_list *lst);
 void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
@@ -92,5 +96,11 @@ t_list				*ft_lstpop_back(t_list **lst);
 t_list				*ft_lstpop_srch(t_list **lst,
 									int (*f)(void *, void *), void *data);
 void				ft_lstswap(t_list *prev, t_list *a);
+
+void				ft_arradd(void ***arr, void *new, size_t type_size);
+void				ft_arrdel(void  **arr, void (*del)(void *));
+void				**ft_arrflst(t_list	**lst, size_t type_size);
+int					ft_arrlen(void **arr);
+void				ft_arrsort(void **tab, int (*cmp)(void *, void *));
 
 #endif

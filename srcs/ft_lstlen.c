@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/01/25 15:33:40 by agiraude          #+#    #+#             */
+/*   Updated: 2022/01/26 10:37:27 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+size_t	ft_lstlen(t_list *lst)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	size_t	n;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
+	if (!lst)
 		return (0);
-	while (--n)
+	n = 1;
+	while (lst->next)
 	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
+		n++;
+		lst = lst->next;
 	}
-	return (*str1 - *str2);
+	return (n);
 }

@@ -6,15 +6,15 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 14:30:33 by agiraude          #+#    #+#             */
-/*   Updated: 2020/12/10 17:18:20 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 00:07:58 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	if (!s)
 		return (0);

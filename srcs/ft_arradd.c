@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_arradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/03/02 23:13:46 by agiraude          #+#    #+#             */
+/*   Updated: 2022/03/02 23:13:58 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_arradd(void ***arr, void *new, size_t type_size)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	void	**new_arr;
+	int		i;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
-		return (0);
-	while (--n)
+	new_arr = (void **)calloc(ft_arrlen(*arr) + 2, sizeof(type_size));
+	if (!new_arr)
+		return ;
+	i = 0;
+	while ((*arr) && (*arr)[i])
 	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
+		new_arr[i] = (*arr)[i];
+		i++;
 	}
-	return (*str1 - *str2);
+	new_arr[i] = new;
+	if (*arr)
+		free(*arr);
+	*arr = new_arr;
 }

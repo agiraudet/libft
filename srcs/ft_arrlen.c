@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/03/02 23:14:24 by agiraude          #+#    #+#             */
+/*   Updated: 2022/03/03 00:21:08 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_arrlen(void **arr)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	int	i;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
+	if (!arr)
 		return (0);
-	while (--n)
-	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
-	}
-	return (*str1 - *str2);
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
 }

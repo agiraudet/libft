@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_arrflst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 14:19:04 by agiraude          #+#    #+#             */
-/*   Updated: 2022/03/03 00:03:55 by agiraude         ###   ########.fr       */
+/*   Created: 2022/03/02 23:14:13 by agiraude          #+#    #+#             */
+/*   Updated: 2022/03/02 23:14:21 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	**ft_arrflst(t_list	**lst, size_t type_size)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	void	**arr;
+	t_list	*elem;
+	size_t	len;
+	size_t	i;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	if (!n)
+	len = ft_lstlen(*lst);
+	arr = (void **)calloc(len + 1, type_size);
+	if (!arr)
 		return (0);
-	while (--n)
+	i = 0;
+	while (i < len)
 	{
-		if (*str1 != *str2)
-			break ;
-		str1++;
-		str2++;
+		elem = ft_lstpop_front(lst);
+		arr[i++] = elem->content;
+		free(elem);
 	}
-	return (*str1 - *str2);
+	return (arr);
 }

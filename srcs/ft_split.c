@@ -6,11 +6,11 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:15:00 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/15 13:48:49 by agiraude         ###   ########.fr       */
+/*   Updated: 2022/03/03 01:07:30 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static size_t	ft_countstrs(char const *s, char c)
 {
@@ -31,22 +31,7 @@ static size_t	ft_countstrs(char const *s, char c)
 	return (count);
 }
 
-static char		*ft_cutstr(char const *s, size_t len)
-{
-	char	*ret;
-	size_t	i;
-
-	ret = (char*)malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	i = 0;
-	while (len-- && *s)
-		ret[i++] = *s++;
-	ret[i] = '\0';
-	return (ret);
-}
-
-static char		**ft_free_tab(char ***tab, size_t i)
+static char	**ft_free_tab(char ***tab, size_t i)
 {
 	i--;
 	while (i > 0)
@@ -56,16 +41,11 @@ static char		**ft_free_tab(char ***tab, size_t i)
 	return (0);
 }
 
-char			**ft_split(char const *s, char c)
+int	ft_loop(char **dst, const char *s, char c)
 {
-	char	**ret;
 	size_t	len;
 	size_t	i;
 
-	if (!s)
-		return (0);
-	if (!(ret = (char**)malloc(sizeof(char*) * (ft_countstrs(s, c) + 1))))
-		return (0);
 	i = 0;
 	while (*s)
 	{
@@ -76,11 +56,30 @@ char			**ft_split(char const *s, char c)
 			len = 0;
 			while (s[len] && s[len] != c)
 				len++;
-			if (!(ret[i++] = ft_cutstr(s, len)))
-				return (ft_free_tab(&ret, i));
+			dst[i] = ft_strndup(s, len);
+			if (!dst[i])
+			{
+				ft_free_tab(&dst, i);
+				return (0);
+			}
+			i++;
 			s += len;
 		}
 	}
-	ret[i] = 0;
-	return (ret);
+	dst[i] = 0;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dst;
+
+	if (!s)
+		return (0);
+	dst = (char **)malloc(sizeof(char *) * (ft_countstrs(s, c) + 1));
+	if (!dst)
+		return (0);
+	if (!ft_loop(dst, s, c))
+		return (0);
+	return (dst);
 }
